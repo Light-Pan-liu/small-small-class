@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>My 前端小世界</title>
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            padding: 0;
+            margin: 0;
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding-left: 50px;
+            padding-right: 50px;
+            background: #2894FF;
+            color: white;
+            height: 120px;
+            min-width: 1000px;
+        }
+
+        .logo {
+            font-size: 30px;
+        }
+
+        .sign-up {
+            color: white;
+            text-decoration: none;
+            border: 1px solid;
+            border-radius: 16px;
+            padding: 3px 8px;
+            -webkit-box-shadow: 0px 0px 25px 4px rgba(157,16,179,1);
+            -moz-box-shadow: 0px 0px 25px 4px rgba(157,16,179,1);
+            box-shadow: 0px 0px 25px 4px rgba(157,16,179,1);
+        }
+
+        .wrapper {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 30px;
+            padding-left: 50px;
+            padding-right: 50px;
+            min-width: 1000px;
+        }
+
+        .sidebar {
+            margin-right: 25px;
+        }
+
+        .main {
+            flex-grow: 1;
+        }
+
+        .title {
+            font-family: monospace,Serif;
+            font-size: 30px;
+        }
+
+        .main .title {
+            text-align: center;
+        }
+
+        .teacherContainer {
+            width: 280px;
+            position: relative;
+        }
+
+        .teacherContainer:hover {
+            transform-origin: left top;
+            transform: rotate(5deg) scale(1.1);
+        }
+
+        .teacherImg {
+            width: 100%;
+            height: auto;
+        }
+
+        .teacherName {
+            font-family: cursive,fantasy,monospace;
+            font-size: 70px;
+        }
+
+        .mask {
+            display: none;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+        }
+
+        .teacherContainer:hover .mask{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            top: 0;
+            left: 0;
+        }
+
+        .table {
+            height: 300px;
+            width: 100%;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 4px;
+        }
+
+        .tableRow {
+            display: flex;
+            height: 20%;
+            text-align: center;
+        }
+
+        .tableHead {
+            background-color: #FFE5B5;
+        }
+
+        .tableRow:nth-child(odd) {
+            background-color: #95CACA;
+        }
+
+        .tableColumn {
+            width: 0;
+            flex-grow: 1;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 2px;
+        }
+
+        .tableColumn {
+            display: flex;
+            justify-content: center;
+        }
+
+        .switch {
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+            height: 30px;
+            width: 60px;
+            border-style: double;
+            border-width: 3px;
+            border-radius: 16px;
+            background-color: #93FF93;
+            -webkit-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.58);
+            -moz-box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.58);
+            box-shadow: 0px 0px 3px 0px rgba(0,0,0,0.58);
+        }
+
+        .switch::before {
+            content: "";
+            height: 20px;
+            width: 20px;
+            border-style: solid;
+            border-width: 1px;
+            border-radius: 50%;
+            background-color: #F9F900;
+            -webkit-box-shadow: 0px 0px 22px 0px rgba(255,255,3,1);
+            -moz-box-shadow: 0px 0px 22px 0px rgba(255,255,3,1);
+            box-shadow: 0px 0px 22px 0px rgba(255,255,3,1);
+        }
+
+        .close {
+            display: flex;
+            justify-content: flex-start;
+            background-color: #D94600;
+        }
+
+        .close::before {
+            background-color: #C4C400;
+            -webkit-box-shadow: 0px 0px 3px 0px rgba(255,255,3,1);
+            -moz-box-shadow: 0px 0px 3px 0px rgba(255,255,3,1);
+            box-shadow: 0px 0px 3px 0px rgba(255,255,3,1);
+        }
+    </style>
+</head>
+
+<body>
+<div class="header">
+    <div class="logo">前端小小班</div>
+    <a href="http://jsbin.com/bazapag/edit?html,css,output" class="sign-up">趕快來報名！</a>
+</div>
+
+<div class="wrapper">
+    <div class="sidebar">
+        <div class="title">老師</div>
+        <div class='teacherContainer'>
+            <img class="teacherImg" src="https://ipetgroup.com/photo/96653_0_620.jpeg" alt="一隻吐舌頭的柴犬正面照">
+            <div class="mask">
+                <div class="teacherName">Elaine</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="main">
+        <div class="title">學生清單</div>
+        <table class="table">
+            <tr class="tableRow tableHead">
+                <th class="tableColumn">座號</th>
+                <th class="tableColumn">暱稱</th>
+                <th class="tableColumn">性別</th>
+                <th class="tableColumn">地區</th>
+                <th class="tableColumn">聽課權益</th>
+                <th class="tableColumn">備註</th>
+            </tr>
+
+            <tr class="tableRow">
+                <td class="tableColumn">1</td>
+                <td class="tableColumn">Pan</td>
+                <td class="tableColumn">男生</td>
+                <td class="tableColumn">台中</td>
+                <td class="tableColumn">
+                    <div class="switch"></div>
+                </td>
+                <td class="tableColumn">是個好男人</td>
+            </tr>
+
+            <tr class="tableRow">
+                <td class="tableColumn">2</td>
+                <td class="tableColumn">Joey</td>
+                <td class="tableColumn">男生</td>
+                <td class="tableColumn">彰化</td>
+                <td class="tableColumn">
+                    <div class="switch close"></div>
+                </td>
+                <td class="tableColumn">瘦到快被風吹走</td>
+            </tr>
+
+            <tr class="tableRow">
+                <td class="tableColumn">3</td>
+                <td class="tableColumn">Rosa</td>
+                <td class="tableColumn">女生</td>
+                <td class="tableColumn">桃園</td>
+                <td class="tableColumn">
+                    <div class="switch"></div>
+                </td>
+                <td class="tableColumn">喝酒很豪邁</td>
+            </tr>
+
+            <tr class="tableRow">
+                <td class="tableColumn">4</td>
+                <td class="tableColumn">Syuan</td>
+                <td class="tableColumn">女生</td>
+                <td class="tableColumn">台中</td>
+                <td class="tableColumn">
+                    <div class="switch"></div>
+                </td>
+                <td class="tableColumn">很有學習力</td>
+            </tr>
+        </table>
+    </div>
+</div>
+</body>
+</html>
